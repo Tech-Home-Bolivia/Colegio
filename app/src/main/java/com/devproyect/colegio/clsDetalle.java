@@ -1,5 +1,6 @@
 package com.devproyect.colegio;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,7 +36,7 @@ public class clsDetalle extends AppCompatActivity {
         vermapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                startActivity(new Intent(clsDetalle.this,clsMapa.class));
             }
         });
 
