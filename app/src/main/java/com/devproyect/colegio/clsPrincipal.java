@@ -1,7 +1,10 @@
 package com.devproyect.colegio;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -20,6 +23,13 @@ List<Colegio> listacolegio;
         lista=(ListView) findViewById(R.id.milistadecolegios);
         AdaptadorColegio adap= new AdaptadorColegio(listacolegio,this);
         lista.setAdapter(adap);
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                GlobalDatos.col=listacolegio.get(position);
+                startActivity(new Intent(clsPrincipal.this,clsDetalle.class));
+            }
+        });
 
 
     }
